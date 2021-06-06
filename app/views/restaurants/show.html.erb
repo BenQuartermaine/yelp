@@ -1,0 +1,16 @@
+<%= link_to 'Back to Restaurants', restaurants_path %>
+
+<div style="padding: 24px;">
+  <p>Restaurant Details</p>
+  <h1><%= @restaurant.name %></h1>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.id %></p>
+</div>
+
+<%= form_for(@restaurant) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.submit %>
+<% end %>

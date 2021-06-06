@@ -1,0 +1,19 @@
+<%= link_to 'Add Restaurant', restaurants_new_path %>
+
+<% @restaurants.each_with_index do |r| %>
+<div style="padding: 20px;">
+  Go to <%= link_to r.name, restaurant_path(r) %>
+</div>
+<% end %>
+
+
+ 
+<%= form_for :restaurant, :url=>{:controller=>'restaurants', :action=>'create'} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.submit %>
+<% end %>
